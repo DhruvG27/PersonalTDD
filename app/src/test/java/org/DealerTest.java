@@ -45,4 +45,18 @@ public class DealerTest {
         assertTrue(dealerScore >= 17, "Dealer's score should be at least 17 after drawing.");
     }
 
+    @Test
+    void testDealerRevealsOneCard() {
+        Dealer dealer = new Dealer();
+        Card hiddenCard = new Card(Value.ACE, Suite.SPADES);
+        Card revealedCard = new Card(Value.TEN, Suite.HEARTS);
+
+        dealer.dealCard(hiddenCard);
+        dealer.dealCard(revealedCard);
+
+        String visibleCard = dealer.revealCard();
+
+        assertEquals("10 of Hearts", visibleCard, "Dealer should reveal only the first card in the hand.");
+    }
+
 }

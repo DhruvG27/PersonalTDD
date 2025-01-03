@@ -17,4 +17,12 @@ public class Dealer {
     public void dealCard(Card card) {
         hand.add(card);
     }
+
+    public void drawCards(){
+
+    }
+
+    public void calculateScore(){
+
+    }
 }

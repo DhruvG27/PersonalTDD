@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.components.Card;
 import org.components.Dealer;
+import org.components.Deck;
 import org.enums.Suite;
 import org.enums.Value;
 import org.junit.jupiter.api.Test;
@@ -30,6 +31,18 @@ public class DealerTest {
         // Dealer's hand should contain the card
         assertEquals(1, dealer.getHand().size(), "Dealer's hand should contain one card.");
         assertTrue(dealer.getHand().contains(card), "Dealer's hand should contain the dealt card.");
+    }
+
+    @Test
+    void testDealerDrawsUntilSeventeen() {
+        Dealer dealer = new Dealer();
+        Deck deck = new Deck(); // Assume a full deck is available
+
+        dealer.drawCards(deck);
+
+        // Dealer's total score should be at least 17
+        int dealerScore = dealer.calculateScore();
+        assertTrue(dealerScore >= 17, "Dealer's score should be at least 17 after drawing.");
     }
 
 }

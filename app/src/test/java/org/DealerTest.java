@@ -17,10 +17,10 @@ public class DealerTest {
         Dealer dealer = new Dealer();
         Card c = new Card(Value.ACE, Suite.SPADES);
 
-        dealer.dealCard(c);
-
         // dealer should have an empty hand at the begining
         assertTrue(dealer.getHand().isEmpty());
+
+        dealer.dealCard(c);
 
         // dealer should have one card in hand after dealing
         assertEquals(dealer.getHand().size(), 1);

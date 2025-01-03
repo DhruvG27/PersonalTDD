@@ -13,4 +13,8 @@ public class Dealer {
     public List<Card> getHand() {
         return hand;
     }
+
+    public void dealCard(Card card) {
+        hand.add(card);
+    }
 }

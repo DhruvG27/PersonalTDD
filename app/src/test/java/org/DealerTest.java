@@ -4,9 +4,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.components.Card;
+import org.components.Dealer;
+import org.enums.Suite;
+import org.enums.Value;
 import org.junit.jupiter.api.Test;
 
-public class Dealer {
+public class DealerTest {
 
     @Test
     void testDealerInitialisation() {

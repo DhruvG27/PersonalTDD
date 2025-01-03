@@ -42,4 +42,13 @@ public class Dealer {
     
         return score;
     }
+
+    public String revealCard() {
+        if (hand.isEmpty()) {
+            return "No cards to reveal";
+        }
+        hand.get(0).show(); // Show the first card
+        return hand.get(0).toString(); // Return the string representation of the revealed card
+    }
+    
 }    

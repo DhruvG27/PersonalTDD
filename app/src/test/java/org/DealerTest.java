@@ -13,17 +13,23 @@ import org.junit.jupiter.api.Test;
 public class DealerTest {
 
     @Test
-    void testDealerInitialisation() {
+    void testDealerInitialization() {
         Dealer dealer = new Dealer();
-        Card c = new Card(Value.ACE, Suite.SPADES);
 
-        // dealer should have an empty hand at the begining
-        assertTrue(dealer.getHand().isEmpty());
-
-        dealer.dealCard(c);
-
-        // dealer should have one card in hand after dealing
-        assertEquals(dealer.getHand().size(), 1);
+        // Dealer should have an empty hand initially
+        assertTrue(dealer.getHand().isEmpty(), "Dealer should start with an empty hand.");
     }
-    
+
+    @Test
+    void testDealerDealsCardToSelf() {
+        Dealer dealer = new Dealer();
+        Card card = new Card(Value.ACE, Suite.HEARTS);
+
+        dealer.dealCard(card);
+
+        // Dealer's hand should contain the card
+        assertEquals(1, dealer.getHand().size(), "Dealer's hand should contain one card.");
+        assertTrue(dealer.getHand().contains(card), "Dealer's hand should contain the dealt card.");
+    }
+
 }

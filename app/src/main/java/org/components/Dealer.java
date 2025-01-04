@@ -29,20 +29,6 @@ public class Dealer extends Person {
         }
     }
     
-    public int calculateScore() {
-        int score = 0;
-        boolean hasAce = false;
-    
-        for (Card card : hand) {
-            score += card.getScore();
-            if (card.getValue() == Value.ACE) hasAce = true;
-        }
-    
-        // Adjust for ACE if score exceeds 21
-        if (score > 21 && hasAce) score -= 10;
-    
-        return score;
-    }
 
     public String revealCard() {
         if (hand.isEmpty()) {
@@ -59,7 +45,7 @@ public class Dealer extends Person {
 
     public String determineWinner(Player player) {
         int dealerScore = calculateScore();
-        int playerScore = player.calcScore();
+        int playerScore = player.calculateScore();
     
         if (playerScore > 21) return "Dealer"; // Player bust
         if (dealerScore > 21) return "Player"; // Dealer bust

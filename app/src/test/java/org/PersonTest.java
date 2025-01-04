@@ -25,7 +25,7 @@ public class PersonTest {
         person.dealCard(new Card(Value.TEN, Suite.HEARTS));
         person.dealCard(new Card(Value.ACE, Suite.SPADES));
 
-        int score = person.calculateScoreO();
+        int score = person.calculateScore();
 
         assertEquals(21, score, "Score calculation should handle ACE as 11 correctly.");
     }

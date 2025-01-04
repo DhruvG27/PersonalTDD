@@ -12,7 +12,11 @@ public abstract class Person {
         hand = new ArrayList<>();
     }
 
-    public int calculateScoreO() {
+    public void dealCard(Card card) {
+        hand.add(card);
+    }
+
+    public int calculateScore() {
         int score = 0;
         boolean hasAce = false;
 
@@ -26,5 +30,11 @@ public abstract class Person {
         return score;
     }
 
-    public abstract void dealCard(Card card);
+    public void clearHand() {
+        hand.clear();
+    }
+
+    public List<Card> getHand() {
+        return hand;
+    }
 }

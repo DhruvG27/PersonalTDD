@@ -17,8 +17,8 @@ public class Player extends Person {
         return hand;
     }
 
-    public void dealCard(Card c) {
-        hand.add(c);
+    public void dealCard(Card card) {
+        hand.add(card);
     }
 
     public void clearHand() {
@@ -26,33 +26,13 @@ public class Player extends Person {
     }
 
     public void showHand() {
-        for (Card c : hand) {
-            c.show();;
+        for (Card card : hand) {
+            card.show();
         }
     }
 
     public boolean hasAce() {
-        for (Card c : hand) {
-            if (c.getValue() == Value.ACE) {
-                return true;
-            }
-        }
-        return false;
-
-    }
-
-    public int calcScore() {
-
-        int score = 0;
-        for (Card c : hand) {
-            score += c.getScore();
-        }
-
-        if (score > 21 && hasAce()) {
-            score -= 10;
-        }
-
-        return score;
+        return hand.stream().anyMatch(card -> card.getValue() == Value.ACE);
     }
 
 }

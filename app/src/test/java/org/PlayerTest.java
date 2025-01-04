@@ -95,7 +95,7 @@ public class PlayerTest {
     player.dealCard(c2);
     player.dealCard(c3);
 
-    int score = player.calcScore();
+    int score = player.calculateScore();
 
     assertEquals(21, score);
 
@@ -108,7 +108,7 @@ public class PlayerTest {
     player.dealCard(c2);
     player.dealCard(c3);
 
-    int score2 = player.calcScore();
+    int score2 = player.calculateScore();
     assertEquals(12, score2);
 
     player.clearHand();
@@ -117,16 +117,17 @@ public class PlayerTest {
     c2 = new Card(Value.TEN, Suite.DIAMONDS);
     player.dealCard(c);
     player.dealCard(c2);
-    int score3 = player.calcScore();
+    int score3 = player.calculateScore();
     assertEquals(21, score3);
   }
 
   @Test
   void testPlayerScoreCalculation() {
-    Player player = new Player();
-    player.dealCard(new Card(Value.KING, Suite.SPADES));
-    player.dealCard(new Card(Value.ACE, Suite.CLUBS));
-
-    assertEquals(21, player.calculateScoreO(), "Player should correctly calculate blackjack score.");
+      Player player = new Player();
+      player.dealCard(new Card(Value.KING, Suite.SPADES));
+      player.dealCard(new Card(Value.ACE, Suite.CLUBS));
+  
+      assertEquals(21, player.calculateScore(), "Player should correctly calculate blackjack score.");
   }
+  
 }

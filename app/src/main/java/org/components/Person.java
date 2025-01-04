@@ -12,7 +12,7 @@ public abstract class Person {
         hand = new ArrayList<>();
     }
 
-    public int calculateScore() {
+    public int calculateScoreO() {
         int score = 0;
         boolean hasAce = false;
 

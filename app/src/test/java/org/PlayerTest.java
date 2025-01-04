@@ -118,4 +118,13 @@ public class PlayerTest {
     int score3 = player.calcScore();
     assertEquals(21, score3);
   }
+
+  @Test
+  void testPlayerScoreCalculation() {
+    Player player = new Player();
+    player.dealCard(new Card(Value.KING, Suite.SPADES));
+    player.dealCard(new Card(Value.ACE, Suite.CLUBS));
+
+    assertEquals(21, player.calculateScoreO(), "Player should correctly calculate blackjack score.");
+  }
 }

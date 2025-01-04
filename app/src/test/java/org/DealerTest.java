@@ -87,4 +87,13 @@ public class DealerTest {
         assertEquals("Player", winner, "Player should win with a score of 21 against Dealer's 20.");
     }
 
+    @Test
+    void testDealerScoreCalculation() {
+        Dealer dealer = new Dealer();
+        dealer.dealCard(new Card(Value.QUEEN, Suite.DIAMONDS));
+        dealer.dealCard(new Card(Value.FIVE, Suite.HEARTS));
+
+        assertEquals(15, dealer.calculateScoreO(), "Dealer should correctly calculate score.");
+    }
+
 }

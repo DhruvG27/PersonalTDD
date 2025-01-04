@@ -47,8 +47,11 @@ public class Dealer {
         if (hand.isEmpty()) {
             return "No cards to reveal";
         }
-        hand.get(0).show(); // Show the first card
-        return hand.get(0).toString(); // Return the string representation of the revealed card
+        Card lastCard = hand.get(hand.size() - 1);
+        lastCard.show(); // Make the card visible
+        return lastCard.toString(); // Return the string representation of the card
     }
+    
+    
     
 }    

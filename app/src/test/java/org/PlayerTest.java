@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.components.Card;
+import org.components.Player;
+import org.components.Person;
 import org.enums.Suite;
 import org.enums.Value;
 import org.junit.jupiter.api.Test;
@@ -125,6 +127,6 @@ public class PlayerTest {
     player.dealCard(new Card(Value.KING, Suite.SPADES));
     player.dealCard(new Card(Value.ACE, Suite.CLUBS));
 
-    assertEquals(21, player.calcScore(), "Player should correctly calculate blackjack score.");
+    assertEquals(21, player.calculateScoreO(), "Player should correctly calculate blackjack score.");
   }
 }

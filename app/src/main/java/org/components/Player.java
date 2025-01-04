@@ -2,6 +2,7 @@ package org.components;
 
 import java.util.ArrayList;
 
+import org.components.Person;
 import org.enums.Value;
 
 public class Player extends Person {

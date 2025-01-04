@@ -3,6 +3,7 @@ package org.components;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.components.Person;
 import org.enums.Value;
 
 public class Dealer extends Person {

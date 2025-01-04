@@ -52,6 +52,9 @@ public class Dealer {
         return lastCard.toString(); // Return the string representation of the card
     }
     
+    public void resetHand() {
+       
+    }    
     
     
 }    

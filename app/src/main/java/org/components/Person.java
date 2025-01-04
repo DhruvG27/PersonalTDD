@@ -31,6 +31,7 @@ public abstract class Person {
     }
 
     public void clearHand() {
+        System.out.println("Clearing hand...");
         hand.clear();
     }
 

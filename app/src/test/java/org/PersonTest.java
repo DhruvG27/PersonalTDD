@@ -1,6 +1,7 @@
 package org;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.components.Card;
 import org.components.Dealer;
@@ -28,6 +29,17 @@ public class PersonTest {
         int score = person.calculateScore();
 
         assertEquals(21, score, "Score calculation should handle ACE as 11 correctly.");
+    }
+
+    @Test
+    void testPersonClearHand() {
+        Person person = new Person() {
+        };
+        Card card = new Card(Value.ACE, Suite.SPADES);
+        person.dealCard(card);
+        assertEquals(1, person.getHand().size(), "Hand should contain 1 card before clearing.");
+        person.clearHand();
+        assertTrue(person.getHand().isEmpty(), "Hand should be empty after clearing.");
     }
 
 }

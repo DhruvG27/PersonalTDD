@@ -53,7 +53,7 @@ public class Dealer {
     }
     
     public void resetHand() {
-       
+        hand.clear();
     }    
     
     

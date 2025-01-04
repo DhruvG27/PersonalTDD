@@ -93,7 +93,7 @@ public class DealerTest {
         dealer.dealCard(new Card(Value.QUEEN, Suite.DIAMONDS));
         dealer.dealCard(new Card(Value.FIVE, Suite.HEARTS));
 
-        assertEquals(15, dealer.calculateScoreO(), "Dealer should correctly calculate score.");
+        assertEquals(15, dealer.calculateScore(), "Dealer should correctly calculate score.");
     }
 
 }

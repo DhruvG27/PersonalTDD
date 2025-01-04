@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.enums.Value;
 
-public class Player {
+public class Player extends Person {
 
     public ArrayList<Card> hand;
 

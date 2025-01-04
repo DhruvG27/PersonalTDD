@@ -125,6 +125,6 @@ public class PlayerTest {
     player.dealCard(new Card(Value.KING, Suite.SPADES));
     player.dealCard(new Card(Value.ACE, Suite.CLUBS));
 
-    assertEquals(21, player.calculateScoreO(), "Player should correctly calculate blackjack score.");
+    assertEquals(21, player.calcScore(), "Player should correctly calculate blackjack score.");
   }
 }

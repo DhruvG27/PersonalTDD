@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.enums.Value;
 
-public class Dealer {
+public class Dealer extends Person {
     private final List<Card> hand;
 
     public Dealer() {

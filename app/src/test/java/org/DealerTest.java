@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.components.Card;
 import org.components.Dealer;
 import org.components.Deck;
+import org.components.Player;
 import org.enums.Suite;
 import org.enums.Value;
 import org.junit.jupiter.api.Test;
@@ -68,6 +69,22 @@ public class DealerTest {
         dealer.resetHand();
 
         assertTrue(dealer.getHand().isEmpty(), "Dealer's hand should be empty after resetting.");
+    }
+
+    @Test
+    void testDetermineWinner() {
+        Dealer dealer = new Dealer();
+        Player player = new Player();
+
+        dealer.dealCard(new Card(Value.KING, Suite.SPADES)); // Dealer has 20
+        dealer.dealCard(new Card(Value.JACK, Suite.HEARTS));
+
+        player.dealCard(new Card(Value.TEN, Suite.DIAMONDS)); // Player has 21
+        player.dealCard(new Card(Value.ACE, Suite.CLUBS));
+
+        String winner = dealer.determineWinner(player);
+
+        assertEquals("Player", winner, "Player should win with a score of 21 against Dealer's 20.");
     }
 
 }

@@ -66,12 +66,11 @@ public class DealerTest {
         Dealer dealer = new Dealer();
         Card card = new Card(Value.ACE, Suite.SPADES);
         dealer.dealCard(card); // Add a card to the dealer's hand
-    
+
         dealer.clearHand(); // Reset the hand
-    
+
         assertTrue(dealer.getHand().isEmpty(), "Dealer's hand should be empty after resetting.");
     }
-    
 
     @Test
     void testDetermineWinner() {
@@ -94,9 +93,18 @@ public class DealerTest {
         Dealer dealer = new Dealer();
         dealer.dealCard(new Card(Value.QUEEN, Suite.DIAMONDS));
         dealer.dealCard(new Card(Value.FIVE, Suite.HEARTS));
-    
+
         assertEquals(15, dealer.calculateScore(), "Dealer should correctly calculate score.");
     }
-    
+
+    @Test
+    void testDealerStandsOnSeventeen() {
+        Dealer dealer = new Dealer();
+        Deck deck = new Deck(); // Ensure deck is pre-filled with cards
+
+        dealer.drawCards(deck);
+
+        assertTrue(dealer.calculateScore() >= 17, "Dealer should stop drawing cards when score is 17 or higher.");
+    }
 
 }

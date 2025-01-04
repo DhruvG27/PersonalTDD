@@ -56,7 +56,18 @@ public class DealerTest {
 
         String visibleCard = dealer.revealCard();
 
-        assertEquals("10 of Hearts", visibleCard, "Dealer should reveal only the first card in the hand.");
+        assertEquals("Ten of Hearts", visibleCard, "Dealer should reveal only the first card in the hand.");
+    }
+
+    @Test
+    void testDealerResetsHand() {
+        Dealer dealer = new Dealer();
+        Card card = new Card(Value.ACE, Suite.SPADES);
+        dealer.dealCard(card);
+
+        dealer.resetHand();
+
+        assertTrue(dealer.getHand().isEmpty(), "Dealer's hand should be empty after resetting.");
     }
 
 }

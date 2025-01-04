@@ -11,7 +11,7 @@ public class Dealer extends Person {
     public void drawCards(Deck deck) {
         while (calculateScore() < 17) {
             Card card = deck.drawCard();
-            if (card == null) break; // Stop if deck is empty
+            if (card == null) break;
             dealCard(card);
         }
     }

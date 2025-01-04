@@ -7,19 +7,6 @@ import org.components.Person;
 import org.enums.Value;
 
 public class Dealer extends Person {
-    private final List<Card> hand;
-
-    public Dealer() {
-        this.hand = new ArrayList<>();
-    }
-
-    public List<Card> getHand() {
-        return hand;
-    }
-
-    public void dealCard(Card card) {
-        hand.add(card);
-    }
 
     public void drawCards(Deck deck) {
         while (calculateScore() < 17) {
@@ -37,10 +24,6 @@ public class Dealer extends Person {
         Card lastCard = hand.get(hand.size() - 1);
         lastCard.show(); // Make the card visible
         return lastCard.toString(); // Return the string representation of the card
-    }
-    
-    public void resetHand() {
-        hand.clear();
     }
 
     public String determineWinner(Player player) {

@@ -8,6 +8,7 @@ import org.components.Card;
 import org.components.Dealer;
 import org.components.Deck;
 import org.components.Player;
+import org.components.Person;
 import org.enums.Suite;
 import org.enums.Value;
 import org.junit.jupiter.api.Test;
@@ -64,12 +65,13 @@ public class DealerTest {
     void testDealerResetsHand() {
         Dealer dealer = new Dealer();
         Card card = new Card(Value.ACE, Suite.SPADES);
-        dealer.dealCard(card);
-
-        dealer.resetHand();
-
+        dealer.dealCard(card); // Add a card to the dealer's hand
+    
+        dealer.clearHand(); // Reset the hand
+    
         assertTrue(dealer.getHand().isEmpty(), "Dealer's hand should be empty after resetting.");
     }
+    
 
     @Test
     void testDetermineWinner() {

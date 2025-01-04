@@ -54,7 +54,19 @@ public class Dealer {
     
     public void resetHand() {
         hand.clear();
-    }    
+    }
+
+    public String determineWinner(Player player) {
+        int dealerScore = calculateScore();
+        int playerScore = player.calcScore();
+    
+        if (playerScore > 21) return "Dealer"; // Player bust
+        if (dealerScore > 21) return "Player"; // Dealer bust
+        if (playerScore > dealerScore) return "Player";
+        if (dealerScore > playerScore) return "Dealer";
+        return "Draw";
+    }
+    
     
     
 }    

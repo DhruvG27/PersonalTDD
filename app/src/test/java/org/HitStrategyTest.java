@@ -17,3 +17,15 @@ class HitStrategyTest {
 
         assertTrue(strategy.shouldHit(dealer), "Dealer should hit on a soft 17.");
     }
+
+    @Test
+    void testHard17NoHit() {
+        HitStrategy strategy = new Soft17HitStrategy();
+        Person dealer = new Dealer();
+        
+        dealer.dealCard(new Card(Value.SEVEN, Suite.CLUBS));
+        dealer.dealCard(new Card(Value.TEN, Suite.DIAMONDS));
+
+        assertFalse(strategy.shouldHit(dealer), "Dealer should not hit on a hard 17.");
+    }
+}

@@ -8,6 +8,11 @@ import org.enums.Value;
 
 public class Dealer extends Person {
 
+
+    public Dealer() {
+        this.hand = new ArrayList<>();
+    }
+
     public void drawCards(Deck deck) {
         while (calculateScore() < 17) {
             Card card = deck.drawCard();
@@ -36,7 +41,22 @@ public class Dealer extends Person {
         if (dealerScore > playerScore) return "Dealer";
         return "Draw";
     }
-    
+
+    @Override
+    public void dealCard(Card card) {
+        if (card != null) { // Prevent adding null cards
+            hand.add(card);
+        }
+    }
+
+    public void resetHand() {
+        hand.clear();
+    }
+
+    @Override
+    public int calculateScore() {
+        return super.calculateScore();
+    }   
     
     
 }    

@@ -12,6 +12,10 @@ public abstract class Person {
         hand = new ArrayList<>();
     }
 
+    public List<Card> getHand() {
+        return hand;
+    }
+
     public void dealCard(Card card) {
         hand.add(card);
     }
@@ -35,7 +39,10 @@ public abstract class Person {
         hand.clear();
     }
 
-    public List<Card> getHand() {
-        return hand;
+    // Consolidated logic to check for soft 17
+    public boolean isSoft17() {
+        int score = calculateScore();
+        boolean hasAce = hand.stream().anyMatch(card -> card.getValue() == Value.ACE);
+        return score == 17 && hasAce;
     }
 }

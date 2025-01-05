@@ -21,5 +21,13 @@ public class EnglishView {
     public String renderPlayerHand(Player player) {
         return renderHand("Player", player);
     }
+
+    public String renderDealerHand(Dealer dealer) {
+        return "Dealer's hand: " +
+               dealer.getHand().stream()
+                     .map(card -> dealer.getHand().indexOf(card) == 0 ? card.toString() : "Hidden")
+                     .collect(Collectors.joining(", "));
+    }
+    
     
 }

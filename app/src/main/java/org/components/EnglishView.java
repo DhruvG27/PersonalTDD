@@ -19,15 +19,34 @@ public class EnglishView {
     }
 
     public String renderPlayerHand(Player player) {
-        return renderHand("Player", player);
-    }
-
-    public String renderDealerHand(Dealer dealer) {
-        return "Dealer's hand: " +
-               dealer.getHand().stream()
-                     .map(card -> dealer.getHand().indexOf(card) == 0 ? card.toString() : "Hidden")
+        // Ensure all cards in the player's hand are visible
+        player.getHand().forEach(Card::show);
+    
+        // Render the player's hand
+        return "Player's hand: " +
+               player.getHand().stream()
+                     .map(Card::toString)
                      .collect(Collectors.joining(", "));
     }
+    
+
+    public String renderDealerHand(Dealer dealer) {
+        // Ensure only the first card is visible
+        for (int i = 0; i < dealer.getHand().size(); i++) {
+            if (i == 0) {
+                dealer.getHand().get(i).show();
+            } else {
+                dealer.getHand().get(i).hide();
+            }
+        }
+    
+        // Render the dealer's hand
+        return "Dealer's hand: " +
+               dealer.getHand().stream()
+                     .map(Card::toString)
+                     .collect(Collectors.joining(", "));
+    }
+    
     
     
 }

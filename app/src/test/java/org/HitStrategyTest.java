@@ -3,9 +3,9 @@ package org;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import org.components.*;
+import org.components.strategies.*;
 import org.enums.Suite;
 import org.enums.Value;
-import org.strategies.*;
 
 class HitStrategyTest {
 

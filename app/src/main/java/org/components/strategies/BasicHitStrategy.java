@@ -1,4 +1,4 @@
-package org.strategies;
+package org.components.strategies;
 
 import org.components.Person;
 

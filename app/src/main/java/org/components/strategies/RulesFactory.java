@@ -1,4 +1,4 @@
-package org.strategies;
+package org.components.strategies;
 
 public class RulesFactory {
 

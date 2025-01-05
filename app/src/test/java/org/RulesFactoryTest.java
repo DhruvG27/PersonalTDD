@@ -1,8 +1,9 @@
 package org;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.components.strategies.*;
 import org.junit.jupiter.api.Test;
-import org.strategies.*;
 
 class RulesFactoryTest {
 

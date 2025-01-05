@@ -25,7 +25,7 @@ public abstract class Person {
         boolean hasAce = false;
 
         for (Card card : hand) {
-            score += card.getScore();
+            score += card.getValue().getScore();
             if (card.getValue() == Value.ACE) hasAce = true;
         }
 

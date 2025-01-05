@@ -8,6 +8,9 @@ import java.util.stream.Collectors;
 public class EnglishView {
 
     public String renderPlayerHand(Player player) {
-        return "Player Hand Not Implemented";
+        return "Player's hand: " +
+               player.getHand().stream()
+                     .map(Card::toString)
+                     .collect(Collectors.joining(", "));
     }
 }

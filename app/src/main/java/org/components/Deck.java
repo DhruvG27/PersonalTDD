@@ -62,11 +62,11 @@ public class Deck {
         }
     }
 
-    // public Card draw() {
-    //     if (cards.isEmpty()) {
-    //         throw new IllegalStateException("The deck is empty. Cannot draw a card.");
-    //     }
-    //     return cards.remove(0); // Remove and return the top card
+    public Card draw() {
+        if (cards.isEmpty()) {
+            throw new IllegalStateException("The deck is empty. Cannot draw a card.");
+        }
+        return cards.remove(0); // Remove and return the top card
     }
 
     public int size() {

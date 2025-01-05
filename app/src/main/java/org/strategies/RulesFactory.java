@@ -1,7 +1,3 @@
-package org.strategies;
-
-import org.strategies.HitStrategy;
-
 public class RulesFactory {
 
     private final HitStrategy hitStrategy;

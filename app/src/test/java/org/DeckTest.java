@@ -225,4 +225,26 @@ public class DeckTest {
         assertFalse(d.addCard(c));
 
     }
+
+    @Test
+    void testDrawCard() {
+        Deck deck = new Deck();
+        deck.shuffle();
+        Card drawnCard = deck.draw();
+
+        assertNotNull(drawnCard, "The drawn card should not be null.");
+        assertEquals(51, deck.size(), "The deck size should decrease by one after drawing a card.");
+    }
+
+    @Test
+    void testDrawFromEmptyDeck() {
+        Deck deck = new Deck();
+        for (int i = 0; i < 52; i++) {
+            deck.draw();
+        }
+
+        assertThrows(IllegalStateException.class, deck::draw, 
+            "Drawing from an empty deck should throw an IllegalStateException.");
+    }
+
 }

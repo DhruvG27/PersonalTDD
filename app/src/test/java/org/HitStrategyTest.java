@@ -2,10 +2,11 @@ package org;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-import org.components.*;
 import org.components.strategies.*;
-import org.enums.Suite;
-import org.enums.Value;
+import org.components.Person;
+import org.components.Dealer;
+import org.components.Card;
+import org.enums.*;;
 
 class HitStrategyTest {
 

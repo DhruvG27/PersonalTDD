@@ -3,6 +3,8 @@ package org;
 import org.components.Dealer;
 import org.components.Deck;
 import org.components.Player;
+import org.components.strategies.NewGameStrategy;
+import org.components.strategies.InternationalNewGameStrategy;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,7 +16,7 @@ class NewGameStrategyTest {
         Deck deck = new Deck();
         Dealer dealer = new Dealer();
         Player player = new Player();
-        NewGameStrategy strategy = new InternationalNewGameStrategy();
+        NewGameStrategy strategy = new InternationalNewGameStrategy(); // Ensure this is imported
 
         assertTrue(strategy.newGame(deck, dealer, player), "The game should be set up successfully.");
         assertEquals(2, dealer.getHand().size(), "Dealer should have two cards.");
@@ -23,7 +25,7 @@ class NewGameStrategyTest {
 
     @Test
     void testNewGameWithNullValues() {
-        NewGameStrategy strategy = new InternationalNewGameStrategy();
+        NewGameStrategy strategy = new InternationalNewGameStrategy(); // Ensure this is imported
 
         assertFalse(strategy.newGame(null, null, null), 
             "The game setup should fail when null values are provided.");

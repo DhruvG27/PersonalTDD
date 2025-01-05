@@ -15,6 +15,10 @@ repositories {
     mavenCentral()
 }
 
+configurations {
+   testCompile
+}
+
 dependencies {
     // Use JUnit Jupiter for testing.
     testImplementation libs.junit.jupiter
@@ -23,6 +27,15 @@ dependencies {
 
     // This dependency is used by the application.
     implementation libs.guava
+
+    testImplementation 'junit:junit:4.13.2'
+
+    // https://mvnrepository.com/artifact/org.mockito/mockito-all
+    testCompile 'org.mockito:mockito-all:2.19.0'
+
+
+    // Add Mockito for testing
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: '5.15.2'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.

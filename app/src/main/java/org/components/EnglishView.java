@@ -31,21 +31,12 @@ public class EnglishView {
     
 
     public String renderDealerHand(Dealer dealer) {
-        // Ensure only the first card is visible
-        for (int i = 0; i < dealer.getHand().size(); i++) {
-            if (i == 0) {
-                dealer.getHand().get(i).show();
-            } else {
-                dealer.getHand().get(i).hide();
-            }
-        }
-    
-        // Render the dealer's hand
         return "Dealer's hand: " +
                dealer.getHand().stream()
-                     .map(Card::toString)
+                     .map(card -> dealer.getHand().indexOf(card) == 0 ? card.toString() : "Hidden")
                      .collect(Collectors.joining(", "));
     }
+    
     
     
     

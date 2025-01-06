@@ -31,11 +31,30 @@ public class EnglishView {
     
 
     public String renderDealerHand(Dealer dealer) {
+        // Set visibility of cards
+        setCardVisibilityForDealer(dealer);
+    
+        // Render the dealer's hand
+        return formatDealerHand(dealer);
+    }
+    
+    private void setCardVisibilityForDealer(Dealer dealer) {
+        for (int i = 0; i < dealer.getHand().size(); i++) {
+            if (i == 0) {
+                dealer.getHand().get(i).show();
+            } else {
+                dealer.getHand().get(i).hide();
+            }
+        }
+    }
+    
+    private String formatDealerHand(Dealer dealer) {
         return "Dealer's hand: " +
                dealer.getHand().stream()
-                     .map(card -> dealer.getHand().indexOf(card) == 0 ? card.toString() : "Hidden")
+                     .map(Card::toString)
                      .collect(Collectors.joining(", "));
     }
+    
     
     
     
